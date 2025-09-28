@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>UniPod – Wissen zum Anhören</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- wichtig für Mobile -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -10,30 +11,30 @@
     <!-- Navigation -->
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-indigo-600">UniPod</h1>
+            <h1 class="text-lg sm:text-xl font-bold text-indigo-600">UniPod</h1>
             <nav>
-                <a href="/about" class="ml-6 text-gray-700 hover:text-indigo-600">Über Uns</a>
+                <a href="/about" class="ml-4 sm:ml-6 text-gray-700 hover:text-indigo-600 text-sm sm:text-base">Über Uns</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero -->
-    <section class="bg-indigo-50 py-16 text-center">
-        <h2 class="text-4xl font-extrabold text-gray-900">Lernen neu gedacht</h2>
-        <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+    <section class="bg-indigo-50 py-12 sm:py-16 text-center px-4">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-gray-900">Lernen neu gedacht</h2>
+        <p class="mt-4 text-base sm:text-lg text-gray-700 max-w-2xl mx-auto">
             UniPod verwandelt Lerninhalte von Schule und Universität in leicht verständliche Podcasts. 
-            Ob zu Hause oder Unterwegs – Wissen ist immer nur einen Klick entfernt.
+            Ob zu Hause, unterwegs oder in der Bibliothek – Wissen ist immer nur einen Klick entfernt.
         </p>
     </section>
 
     <!-- Podcasts -->
-    <main class="max-w-4xl mx-auto py-12 px-4">
-        <h3 class="text-2xl font-semibold mb-6">Beispiele anhören</h3>
-        <div class="space-y-8">
+    <main class="max-w-4xl mx-auto py-10 sm:py-12 px-4">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-6 text-center sm:text-left">Beispiele anhören</h3>
+        <div class="space-y-6 sm:space-y-8">
             {% for podcast in podcasts %}
-            <div class="bg-white shadow rounded-lg p-6">
-                <h4 class="text-lg font-medium text-indigo-600">{{ podcast.title }}</h4>
-                <p class="text-sm text-gray-500 mb-3">Dauer: {{ podcast.length }}</p>
+            <div class="bg-white shadow rounded-lg p-4 sm:p-6">
+                <h4 class="text-base sm:text-lg font-medium text-indigo-600">{{ podcast.title }}</h4>
+                <p class="text-xs sm:text-sm text-gray-500 mb-3">Dauer: {{ podcast.length }}</p>
                 <audio controls class="w-full">
                     <source src="{{ podcast.src }}" type="audio/mpeg">
                     Dein Browser unterstützt den Audio-Player nicht.
@@ -44,25 +45,25 @@
     </main>
 
     <!-- Vorteile -->
-    <section class="bg-white border-t border-b py-12">
-        <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+    <section class="bg-white border-t border-b py-10 sm:py-12 px-4">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-                <h4 class="text-lg font-semibold text-indigo-600">Flexibel</h4>
-                <p class="mt-2 text-gray-600">Lernstoff hören, wann und wo du willst – ob im Bus, beim Sport oder zu Hause.</p>
+                <h4 class="text-base sm:text-lg font-semibold text-indigo-600">Flexibel</h4>
+                <p class="mt-2 text-gray-600 text-sm sm:text-base">Lernstoff hören, wann und wo du willst – ob im Bus, beim Sport oder zu Hause.</p>
             </div>
             <div>
-                <h4 class="text-lg font-semibold text-indigo-600">Verständlich</h4>
-                <p class="mt-2 text-gray-600">Komplexe Inhalte klar erklärt, angepasst an unterschiedliche Lernniveaus.</p>
+                <h4 class="text-base sm:text-lg font-semibold text-indigo-600">Verständlich</h4>
+                <p class="mt-2 text-gray-600 text-sm sm:text-base">Komplexe Inhalte klar erklärt, angepasst an unterschiedliche Lernniveaus.</p>
             </div>
             <div>
-                <h4 class="text-lg font-semibold text-indigo-600">Zukunftsorientiert</h4>
-                <p class="mt-2 text-gray-600">Eine moderne Lernplattform für Schüler:innen, Studierende und Lehrende.</p>
+                <h4 class="text-base sm:text-lg font-semibold text-indigo-600">Zukunftsorientiert</h4>
+                <p class="mt-2 text-gray-600 text-sm sm:text-base">Eine moderne Lernplattform für Schüler:innen, Studierende und Lehrende.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white border-t mt-16 py-6 text-center text-sm text-gray-500">
+    <footer class="bg-white border-t mt-12 sm:mt-16 py-6 text-center text-xs sm:text-sm text-gray-500">
         © 2025 UniPod – Lernen für die Zukunft
     </footer>
 
