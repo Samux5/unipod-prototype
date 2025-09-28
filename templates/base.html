@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><title>tmp</title></head><body></body></html>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}UniPod{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Header mit Logo und Navigation -->
+  <header class="border-b">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center gap-4">
+      <img src="/static/logo.svg" alt="UniPod" class="h-8 w-auto" />
+      <span class="font-semibold">UniPod (Prototype)</span>
+      <nav class="ml-auto flex gap-4 text-sm">
+        <a class="hover:underline" href="/">Start</a>
+        <a class="hover:underline" href="/podcasts">Podcasts</a>
+        <a class="hover:underline" href="/poll">Umfrage</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hauptinhalt -->
+  <main class="mx-auto max-w-6xl px-4">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 border-t">
+    <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-gray-500">
+      © 2025 UniPod – Prototype for ÖBV (Demo-Inhalte)
+    </div>
+  </footer>
+</body>
+</html>

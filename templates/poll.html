@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Umfrage – UniPod</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f9fafb;
+            color: #111827;
+        }
+
+        nav {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #4f46e5;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4f46e5;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="text"] {
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #4f46e5;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        button:hover {
+            background: #4338ca;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">UniPod</a>
+        <ul>
+            <li><a href="/about">Über Uns</a></li>
+            <li><a href="/#podcasts">Demo-Podcasts</a></li>
+            <li><a href="/poll">Umfrage</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Deine Meinung zählt!</h1>
+        <p>Hilf uns, UniPod noch besser zu machen – beantworte kurz diese Umfrage.</p>
+    </section>
+
+    <!-- Umfrage Formular -->
+    <div class="container">
+        <form method="post" action="/poll">
+            <div>
+                <label for="level">Deine Schulstufe / Studienlevel:</label>
+                <select id="level" name="level" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="schule">Schule</option>
+                    <option value="uni-bachelor">Universität (Bachelor)</option>
+                    <option value="uni-master">Universität (Master)</option>
+                    <option value="andere">Andere</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="feature">Welches Feature wünschst du dir am meisten?</label>
+                <select id="feature" name="feature" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="mehr-podcasts">Mehr Podcasts</option>
+                    <option value="tests">Interaktive Tests</option>
+                    <option value="zusammenfassungen">Zusammenfassungen zum Mitlesen</option>
+                    <option value="community">Community & Austausch</option>
+                </select>
+            </div>
+
+            <button type="submit">Absenden</button>
+        </form>
+    </div>
+
+    <footer>
+        © 2025 UniPod – Alle Rechte vorbehalten
+    </footer>
+
+</body>
+</html>

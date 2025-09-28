@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>UniPod – Dein Lernpodcast</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-indigo-600">UniPod</h1>
+            <nav>
+                <a href="/about" class="ml-6 text-gray-700 hover:text-indigo-600">Über Uns</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-indigo-50 py-16 text-center">
+        <h2 class="text-4xl font-extrabold text-gray-900">Lernen neu gedacht</h2>
+        <p class="mt-4 text-lg text-gray-700">UniPod bringt dir den Lernstoff deiner Uni direkt als Podcast ins Ohr.</p>
+    </section>
+
+    <!-- Podcasts -->
+    <main class="max-w-4xl mx-auto py-12 px-4">
+        <h3 class="text-2xl font-semibold mb-6">Demo-Podcasts</h3>
+        <div class="space-y-8">
+            {% for podcast in podcasts %}
+            <div class="bg-white shadow rounded-lg p-6">
+                <h4 class="text-lg font-medium text-indigo-600">{{ podcast.title }}</h4>
+                <p class="text-sm text-gray-500 mb-3">Dauer: {{ podcast.length }}</p>
+                <audio controls class="w-full">
+                    <source src="{{ podcast.src }}" type="audio/mpeg">
+                    Dein Browser unterstützt den Audio-Player nicht.
+                </audio>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-16 py-6 text-center text-sm text-gray-500">
+        © 2025 UniPod – Alle Rechte vorbehalten
+    </footer>
+
+</body>
+</html>
